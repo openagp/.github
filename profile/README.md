@@ -320,6 +320,6 @@ Read: [**GOVERNANCE.md** ↗](https://github.com/openagp/.github/blob/main/GOVER
 
 <sub><b>OpenAGP</b> — open spec  ·  vendor-neutral  ·  cryptographically verifiable  ·  enforceable in production</sub>
 <br>
-<sub>Reach the maintainers: <a href="mailto:hello@openagp.io">hello@openagp.io</a> · Conduct: <a href="mailto:conduct@openagp.io">conduct@openagp.io</a></sub>
+<sub>Reach the maintainers: <a href="mailto:hello@openagp.io">hello@openagp.io</a></sub>
 
 </div>
