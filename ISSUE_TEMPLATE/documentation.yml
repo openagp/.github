@@ -1,0 +1,46 @@
+name: Documentation
+description: Typos, broken links, missing explanations, or unclear sections in any repo's docs.
+title: "[docs] "
+labels: ["type:docs", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks — docs improvements are some of the most valuable contributions. Anything from a typo to a missing example is welcome.
+
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Which repo?
+      options:
+        - spec
+        - sdk-python
+        - sdk-typescript
+        - cts
+        - registry
+        - examples
+        - .github (org-level)
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: File path or URL
+      placeholder: "spec/concept-and-spec.md §4.2 · or full URL"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What's wrong or missing?
+      description: Quote the current text if it's a wording issue. Describe the gap if something is missing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix
+      description: Optional — a concrete suggestion saves a round-trip. Feel free to open a PR directly if the fix is small.

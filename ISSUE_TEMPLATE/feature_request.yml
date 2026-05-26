@@ -1,0 +1,71 @@
+name: Feature request
+description: Propose a new feature or improvement to an SDK, the CTS, the registry, or examples.
+title: "[feature] "
+labels: ["type:feature", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for **implementation-level** features — a new helper in an SDK, a new check in `agp-cts`, a new example.
+
+        For changes to the **wire protocol or spec semantics** (new fields, new actor kinds, new conformance requirements), use the [Spec change](?template=spec_change.yml) template instead — those follow a longer comment period.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which component?
+      options:
+        - sdk-python
+        - sdk-typescript
+        - cts (agp-cts)
+        - registry
+        - examples
+        - tooling / CI / docs
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the user-facing problem, not the solution. Who is blocked today, and on what?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What would you add/change? Rough API sketch is fine — concrete is better than abstract.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other options did you weigh? Why did you reject them?
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Does this affect cross-language behavior?
+      description: |
+        If the change touches bytes/signatures/canonicalization, both SDKs and the CTS must agree. If not, it can ship in one implementation independently.
+      options:
+        - "No — implementation detail of one SDK only"
+        - "Yes — needs matching change in the other SDK"
+        - "Yes — needs new test vectors in spec/"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I've read the [scope statement in CONTRIBUTING.md](https://github.com/openagp/.github/blob/main/CONTRIBUTING.md#scope) and this is in scope for AGP v0.x.
+          required: true

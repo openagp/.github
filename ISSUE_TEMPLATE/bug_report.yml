@@ -1,0 +1,93 @@
+name: Bug report
+description: Something in a reference implementation (SDK, CTS) or example behaves incorrectly.
+title: "[bug] "
+labels: ["type:bug", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. Before you continue:
+
+        - For **spec ambiguities or wording problems**, use the [Spec change](?template=spec_change.yml) template instead — those follow the RFC process.
+        - For **questions** ("how do I...?"), use [Discussions](https://github.com/openagp/spec/discussions) or the [SUPPORT.md](https://github.com/openagp/.github/blob/main/SUPPORT.md) routing.
+        - For **security vulnerabilities**, do NOT file a public issue. See [SECURITY.md](https://github.com/openagp/.github/blob/main/SECURITY.md).
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which component?
+      options:
+        - sdk-python
+        - sdk-typescript
+        - cts (agp-cts)
+        - registry
+        - examples
+        - other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Package version, commit SHA, or `agp-cts version` output. "main" is fine if you're on tip.
+      placeholder: "openagp 0.0.1 · or commit 07ea960"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the actual behavior. Include the exact command, code snippet, or fixture that triggered it.
+      placeholder: |
+        Running `agp-cts vectors` on the fixture `spec/fixtures/events/...` produced …
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: What should have happened per the spec or per the SDK's documented contract?
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: |
+        Smallest possible repro. For SDK bugs, a runnable snippet. For CTS, the exact `agp-cts ...` invocation and input file (or a link to it). If the bug only happens against specific test vectors, name them.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: |
+        OS + version, language runtime + version (Python 3.10+, Node 20+, Go 1.22+). For cross-language interop bugs, list both sides.
+      placeholder: "macOS 14.5 · Python 3.11.6 · openagp 0.0.1"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: interop
+    attributes:
+      label: Cross-language interop
+      description: Optional — relevant only if the bug involves multiple SDKs disagreeing on bytes.
+      options:
+        - label: I verified the test vectors in `spec/test-vectors/` pass for my SDK independently.
+        - label: I verified the same fixture produces a different signature/canonicalization across SDKs.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: This is not a security vulnerability (if it is, I'll use [private disclosure](https://github.com/openagp/.github/blob/main/SECURITY.md) instead).
+          required: true

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and discussion
+    url: https://github.com/openagp/spec/discussions
+    about: Ask "how do I...", share use cases, or discuss design direction. Not for bugs.
+  - name: Security vulnerability
+    url: https://github.com/openagp/.github/blob/main/SECURITY.md
+    about: Do NOT file public issues for security vulnerabilities. Follow the private disclosure process.
+  - name: Registry submission
+    url: https://github.com/openagp/registry#submitting-an-entry
+    about: Adding your organization to the public actor registry — open a PR, not an issue.
