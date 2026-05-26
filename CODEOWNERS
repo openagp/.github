@@ -1,0 +1,8 @@
+# OpenAGP org community-health files.
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Every change to org-level files (CONTRIBUTING, GOVERNANCE, CODE_OF_CONDUCT,
+# SECURITY, SUPPORT, issue/PR templates, org profile) requests review from the
+# stewards.
+
+*       @fuax16
