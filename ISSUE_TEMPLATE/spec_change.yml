@@ -1,0 +1,88 @@
+name: Spec change (RFC)
+description: Propose a change to the AGP wire protocol, schemas, or spec semantics.
+title: "[spec] "
+labels: ["type:rfc", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Spec change process
+
+        Substantive spec changes follow a structured comment period (see [GOVERNANCE.md](https://github.com/openagp/.github/blob/main/GOVERNANCE.md)):
+
+        - **Editorial** (typos, clarifications): merge on single maintainer review.
+        - **Substantive** (semantics, new fields, new conformance requirements): **2-week comment period**, then maintainer approval.
+        - **Breaking** (wire incompatibility): **4-week comment period** + explicit Zeron sign-off until working group is formed.
+
+        Open this issue first to scope the change. The PR against `openagp/spec` follows once direction is agreed, and lands a decision record in `spec/decisions/`.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Change classification
+      options:
+        - Editorial — typo, wording, clarification
+        - Substantive — adds/changes semantics, additive
+        - Breaking — incompatible with v0.x wire format
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: What part of the spec?
+      options:
+        - Event schema (Flow A / L1)
+        - Policy descriptor (Flow B / L2)
+        - Decision request/response (Flow C / L3)
+        - Discovery / actor metadata
+        - Signature canonicalization (ADR 0001)
+        - Conformance levels (§3.6)
+        - Other / multiple
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: What real-world implementation or governance need drives this? Cite vendor/customer scenarios where possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Concrete change. For schemas, paste the diff. For semantics, describe the new behavior precisely.
+    validations:
+      required: true
+
+  - type: textarea
+    id: compat
+    attributes:
+      label: Compatibility analysis
+      description: |
+        - Is this additive (existing implementations stay conformant)?
+        - If breaking: what's the deprecation runway, and why can't this be additive?
+        - Effect on test vectors and CTS?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Other designs considered. Why are they worse?
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I've read [GOVERNANCE.md](https://github.com/openagp/.github/blob/main/GOVERNANCE.md) and understand the comment-period requirements.
+          required: true
+        - label: I've checked [`spec/decisions/`](https://github.com/openagp/spec/tree/main/decisions) for prior discussion of this question.
+          required: true
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
