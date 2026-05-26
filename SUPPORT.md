@@ -58,8 +58,8 @@ We're a small team. Honest expectations:
 | Spec change issue | 1–2 weeks (longer during active review periods) |
 | Discussions | Best effort |
 
-If something is genuinely urgent and you've heard nothing, ping `@sanketsarkar` (or the listed maintainers in CODEOWNERS) on the issue.
+If something is genuinely urgent and you've heard nothing, ping `@fuax16` (or the listed maintainers in CODEOWNERS) on the issue.
 
 ## Commercial support
 
-For organizations adopting AGP in production and wanting paid support, training, or implementation help, contact **hello@securezeron.com**. This is not required for any AGP usage — the protocol and reference implementations are Apache 2.0 / CC-BY-4.0 and free to use.
+For organizations adopting AGP in production and wanting paid support, training, or implementation help, contact **info@zeron.one**. This is not required for any AGP usage — the protocol and reference implementations are Apache 2.0 / CC-BY-4.0 and free to use.
