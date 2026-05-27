@@ -10,10 +10,11 @@
 
 [![Spec](https://img.shields.io/badge/spec-v0.1%20draft-2a6db8?style=flat-square)](https://github.com/openagp/spec/blob/main/concept-and-spec.md)
 [![PyPI](https://img.shields.io/pypi/v/openagp.svg?style=flat-square&color=2a6db8&label=pypi%3Aopenagp)](https://pypi.org/project/openagp/)
+[![npm](https://img.shields.io/npm/v/@openagp/sdk.svg?style=flat-square&color=2a6db8&label=npm%3A%40openagp%2Fsdk)](https://www.npmjs.com/package/@openagp/sdk)
 [![Spec License](https://img.shields.io/badge/spec-CC--BY--4.0-lightgrey?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![Code License](https://img.shields.io/badge/code-Apache--2.0-blue?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Conformance](https://img.shields.io/badge/conformance-L1%20%C2%B7%20L2%20%C2%B7%20L3-7c3aed?style=flat-square)](https://github.com/openagp/spec#36-conformance-levels)
-[![Status](https://img.shields.io/badge/status-pre--launch-f59e0b?style=flat-square)](#roadmap)
+[![Status](https://img.shields.io/badge/status-v0.1.0--rc.1-2a6db8?style=flat-square)](https://github.com/openagp/.github/blob/main/ROADMAP.md)
 
 ### **One protocol. Every vendor. One control plane.**
 
@@ -135,10 +136,10 @@ Vendors advertise their level via a `.well-known/agp` discovery document. Custom
 #### 📜  Protocol
 
 [**`openagp/spec`**](https://github.com/openagp/spec) — protocol specification, JSON Schemas, fixtures
-<br><sub>Phase 0 · formalization in progress</sub>
+<br><sub>v0.1 working draft · 6 schemas · 23 cross-language test vectors</sub>
 
 [**`openagp/registry`**](https://github.com/openagp/registry) — public directory of compliant actors and their public keys
-<br><sub>Phase 4 · pending</sub>
+<br><sub>open for first actor submissions</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -146,16 +147,16 @@ Vendors advertise their level via a `.well-known/agp` discovery document. Custom
 #### 🛠️  Reference implementations
 
 [**`openagp/sdk-python`**](https://github.com/openagp/sdk-python) — Python SDK · `pip install openagp`
-<br><sub>Phase 1 · stub published</sub>
+<br><sub>v0.0.1 · sign + verify + policy DSL evaluator</sub>
 
 [**`openagp/sdk-typescript`**](https://github.com/openagp/sdk-typescript) — TypeScript SDK · `npm i @openagp/sdk`
-<br><sub>Phase 1 · scaffold</sub>
+<br><sub>v0.0.1 · sign + verify + policy DSL evaluator</sub>
 
 [**`openagp/cts`**](https://github.com/openagp/cts) — Conformance Test Suite (`agp-cts`)
-<br><sub>Phase 2 · pending</sub>
+<br><sub>v0.1 · static Go binary · embedded vectors</sub>
 
 [**`openagp/examples`**](https://github.com/openagp/examples) — end-to-end worked examples
-<br><sub>Alongside Phase 1</sub>
+<br><sub>acme-walkthrough runnable end-to-end</sub>
 
 </td>
 </tr>
@@ -248,7 +249,7 @@ Best places to start:
 <tr>
   <th>Quarter</th><th>Milestone</th><th align="center">Status</th>
 </tr>
-<tr><td><b>Q3 2026</b></td><td>Spec v0.1 + Python/TypeScript SDKs + CTS published</td><td align="center">🟡 in progress</td></tr>
+<tr><td><b>Q2 2026</b></td><td>Spec v0.1 + Python/TypeScript SDKs + CTS published</td><td align="center">✅ shipped (rc.1)</td></tr>
 <tr><td>Q3 2026</td><td>First customer deployments use AGP under the hood</td><td align="center">⚪ pending</td></tr>
 <tr><td>Q4 2026</td><td>Registry entries co-authored with at least 2 model vendors</td><td align="center">⚪ pending</td></tr>
 <tr><td>Q1 2027</td><td>Working group formed (1 plane + 2 vendors + 2 customers + 1 academic)</td><td align="center">⚪ pending</td></tr>
