@@ -62,4 +62,4 @@ If something is genuinely urgent and you've heard nothing, ping `@fuax16` (or th
 
 ## Commercial support
 
-For organizations adopting AGP in production and wanting paid support, training, or implementation help, contact **info@zeron.one**. This is not required for any AGP usage — the protocol and reference implementations are Apache 2.0 / CC-BY-4.0 and free to use.
+For organizations adopting AGP in production and wanting paid support, training, or implementation help, contact **hello@openagp.io**. This is not required for any AGP usage — the protocol and reference implementations are Apache 2.0 / CC-BY-4.0 and free to use.
