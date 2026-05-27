@@ -97,14 +97,60 @@ These are spec-level decisions still on the table. Comment periods follow [GOVER
 
 ---
 
-## Where to start contributing
+## Where to contribute
 
-- **Read** [CONTRIBUTING.md](CONTRIBUTING.md) (DCO sign-off, PR conventions) and [SUPPORT.md](SUPPORT.md) (where to ask questions vs. file bugs vs. propose changes).
-- **Pick a starter issue:**
-  - [Good first issues across the org](https://github.com/search?q=org%3Aopenagp+is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22&type=issues)
-  - [Help wanted across the org](https://github.com/search?q=org%3Aopenagp+is%3Aopen+is%3Aissue+label%3A%22help+wanted%22&type=issues)
-- **Propose a change** via the [issue templates](ISSUE_TEMPLATE) — bug, feature, spec change (RFC), or documentation.
-- **Discuss** designs in [Discussions on `openagp/spec`](https://github.com/openagp/spec/discussions).
+AGP is a multi-repo protocol, so "where do I start?" depends on what you want to do. The right repo depends on your profile and the kind of change you have in mind.
+
+### By contributor profile
+
+**First-time or casual contributor.**
+→ [`examples`](https://github.com/openagp/examples) and [`spec`](https://github.com/openagp/spec) fixtures.
+The labeled [`good first issue`](https://github.com/search?q=org%3Aopenagp+is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22&type=issues) tickets in `examples` (mock-vendor, mock-plane) and `spec` (fixture expansion) are scoped for a single self-contained PR. Best place to start.
+
+**Sustained code contributor.**
+→ [`sdk-python`](https://github.com/openagp/sdk-python) and [`sdk-typescript`](https://github.com/openagp/sdk-typescript).
+Feature work happens here — HTTP scaffolds, Flow C, registry resolver, replay-cache. SDK changes that touch bytes / canonicalization should land in both SDKs in lockstep; CI fails if they diverge.
+
+**Strategic / design contributor.**
+→ [`spec`](https://github.com/openagp/spec).
+Author RFCs, file ADRs, propose schema changes. The three [open RFCs](#open-rfcs-decisions-pending) above (DSL grammar, registry governance, CTS admin) are the highest-leverage strategic questions waiting for a champion.
+
+**Specialized contributor (Go, crypto, conformance).**
+→ [`cts`](https://github.com/openagp/cts).
+The endpoint-probe commands and the Go policy DSL evaluator need someone comfortable with Go and protocol-level reasoning. A third independent implementation is what makes AGP a real protocol rather than just a Python + TypeScript dialect.
+
+**New organization adopting AGP.**
+→ [`registry`](https://github.com/openagp/registry).
+Open one PR with your signed actor entry. This is a one-time onboarding contribution, not a recurring surface.
+
+### By contribution type
+
+| You want to… | Go here |
+|---|---|
+| Add an example showing AGP in action | [`examples`](https://github.com/openagp/examples) |
+| Add an event or policy fixture | [`spec/fixtures/`](https://github.com/openagp/spec/tree/main/fixtures) |
+| Add a cross-language test vector | [`spec/test-vectors/`](https://github.com/openagp/spec/tree/main/test-vectors) |
+| Fix a bug in the Python SDK | [`sdk-python`](https://github.com/openagp/sdk-python/issues/new/choose) |
+| Fix a bug in the TypeScript SDK | [`sdk-typescript`](https://github.com/openagp/sdk-typescript/issues/new/choose) |
+| Propose a wire-format change | [`spec` — Spec change template](https://github.com/openagp/spec/issues/new/choose) |
+| Add a new `agp-cts` subcommand | [`cts`](https://github.com/openagp/cts) |
+| Register your organization in the public actor directory | [`registry`](https://github.com/openagp/registry) |
+| Improve org-level docs (templates, governance, this file) | [`.github`](https://github.com/openagp/.github) |
+| Ask a question or discuss design | [Discussions on `openagp/spec`](https://github.com/openagp/spec/discussions) |
+| Report a security vulnerability | [SECURITY.md](SECURITY.md) — **do not** file a public issue |
+
+### Cross-repo changes
+
+AGP is a protocol, so many changes touch multiple repos at once. A typical example: adding a new `action.type` enum value means a PR on [`spec`](https://github.com/openagp/spec) (schema + fixture + test vector), then matching PRs on [`sdk-python`](https://github.com/openagp/sdk-python) and [`sdk-typescript`](https://github.com/openagp/sdk-typescript) syncing the bundled schemas, possibly a PR on [`cts`](https://github.com/openagp/cts), and an [`examples`](https://github.com/openagp/examples) PR showing the new type in context.
+
+The **cross-language impact** checklist on the [PR template](PULL_REQUEST_TEMPLATE.md) is there to flag exactly this. CI enforces cross-language parity: if Python and TypeScript disagree on bytes for the same input, the build fails.
+
+### Read first
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — DCO sign-off (`git commit -s`), PR conventions, scope statement.
+- [SUPPORT.md](SUPPORT.md) — where to ask questions vs. file bugs vs. propose spec changes.
+- [GOVERNANCE.md](GOVERNANCE.md) — for spec/RFC work specifically, the comment-period rules (2 weeks substantive, 4 weeks breaking).
+- [Issue templates](ISSUE_TEMPLATE) — bug, feature, spec change (RFC), documentation. Picks the right repo automatically.
 
 ---
 
