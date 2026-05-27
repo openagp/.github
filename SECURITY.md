@@ -21,7 +21,7 @@ Direct links:
 - [openagp/registry](https://github.com/openagp/registry/security/advisories/new)
 - [openagp/examples](https://github.com/openagp/examples/security/advisories/new)
 
-If GitHub is unavailable to you, email **info@zeron.one** (Zeron, the current steward).
+If GitHub is unavailable to you, email **hello@openagp.io**.
 
 ## What to include
 
