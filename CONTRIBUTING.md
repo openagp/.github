@@ -2,6 +2,16 @@
 
 Thanks for your interest. AGP is an open protocol and we welcome contributions from anyone — vendors implementing receivers, customers writing policies, researchers, and engineers fixing typos.
 
+## Quickstart (first contribution in ~30 minutes)
+
+1. **See it run.** `git clone https://github.com/openagp/examples && cd examples/acme-walkthrough && make demo` — ~0.2s, signs three artifacts end-to-end.
+2. **Run the tests** in whichever SDK you'll touch: `cd sdk-python && pip install -e ".[dev]" && pytest` (or `cd sdk-typescript && npm install && npm test`).
+3. **Pick a starter task.** Browse [`good first issue`](https://github.com/search?q=org%3Aopenagp+is%3Aopen+label%3A%22good+first+issue%22&type=issues) — each has a "🚀 Start here" block with files + how to test + acceptance criteria.
+4. **Want a bigger, ownable project?** [Port the SDK to a new language](https://github.com/openagp/spec/issues/16) — the cross-language test vectors are the spec.
+5. **Open a PR** with DCO sign-off (`git commit -s`). No CLA. CI must be green.
+
+New to the protocol? Read [What is AGP?](https://openagp.io/learn/what-is-agp/) and [How it works](https://openagp.io/learn/how-it-works/), or ask in [Discussions](https://github.com/openagp/spec/discussions).
+
 ## Ways to contribute
 
 - **Spec changes** — open an issue first, then a PR against `openagp/spec`.
